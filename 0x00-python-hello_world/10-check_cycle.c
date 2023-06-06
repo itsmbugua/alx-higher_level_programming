@@ -1,44 +1,26 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
- * check_cycle - function to check if there is a cycle in linked list
+ * check_cycle - checks if a linked list contains a cycle
+ * @list: linked list to check
  *
- * @list: pointer to linked list
- *
- * Return: 1 if there is a cycle else return 0
+ * Return: 1 if list is has cycle 0 if else
  */
-
 int check_cycle(listint_t *list)
 {
-	int *vals, i, x, count = 0;
+	listint_t *slow = list;
+	listint_t *fast = list;
 
-	if (list == NULL)
+	if (!list)
 		return (0);
 
-	vals = malloc(1 * sizeof(int));
-	vals[0] = 0;
-	while (list)
+	while (slow && fast && fast->next)
 	{
-		vals = realloc(vals, (i + 1) * sizeof(int));
-		vals[i] = list->n;
-		for (x = 0; x < i; x++)
-		{
-			if (vals[x] == vals[i])
-			{
-				count += 1;
-			}
-			if (count == 2)
-			{
-				free(vals);
-				return (1);
-			}
-		}
-		count = 0;
-		i++;
-		list = list->next;
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast)
+			return (1);
 	}
 
-	free(vals);
 	return (0);
 }
