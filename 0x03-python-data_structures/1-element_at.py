@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def print_matrix_integer(matrix=[[]]):
-    for row in matrix:
-        for col in row:
-            print("{:d}".format(col), end=" " if col != row[-1] else "")
-        print()    
+# 1-element_at.py
+
+
+def element_at(my_list, idx):
+    """Retrive an element from a list."""
+    if idx < 0 or idx > (len(my_list) - 1):
+        return None
+    return (my_list[idx])    
