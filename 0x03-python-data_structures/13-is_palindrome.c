@@ -8,7 +8,7 @@
  *
  * @head: linked list
  *
- * Return: 1 if palindrome,else 0
+ * Return: 1 if palindrome, 0 if not palindrome
  */
 
 int is_palindrome(listint_t **head)
