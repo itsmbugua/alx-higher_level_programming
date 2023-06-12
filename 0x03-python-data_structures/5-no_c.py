@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
 def no_c(my_string: str) -> str:
-    """ to replace all instances of,lowercase and uppercase c
+    """ function to replace all instances of,
+        lowercase and uppercase c
 
-    Args:
-    my_string: string to remove all uppercase c
+        Args:
+            my_sting: string to remove all c's
 
-    Returns:
-    new string
-
+        Return:
+             new string
     """
-    return "".jion([x for x in my_string if x != "c" and x != "C"])
+
+    return "".join([x for x in my_string if x != "c" and x != "C"])
