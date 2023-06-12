@@ -1,27 +1,29 @@
 #!/usr/bin/python3
 
 def copy_list(my_list: list = []) -> list:
-    """ to copy data from one list to another
+    """ function to copy data from one list to another
 
-    Args:
-    my_list: list of integers
+       Args:
+           my_list: a list of integers
 
-    Returns:
-     list of integers
+       Return:
+             a list of integers
 
     """
+
     return [x for x in my_list]
 
+
 def new_in_list(my_list: list, idx: int, element: int) -> list:
-    """ to replace element in list
+    """ function to replace element in list
 
-    Args:
-    my_list: array of integers
-    idx: index to find item
-    element: new item to add in the list at idx
+        Args:
+            my_list: an array of integers
+            idx: index to find item
+            element: new item to add in list at index idx
 
-    Returns:
-    a copy of my_list
+        Returns:
+            a copy of my_list
 
     """
     length = len(my_list) - 1
@@ -29,8 +31,8 @@ def new_in_list(my_list: list, idx: int, element: int) -> list:
     if idx < 0 or idx > length:
         return copy_list(my_list)
 
-    new_list - copy_list(my_list)
-    #delete and insert at index idx
+    new_list = copy_list(my_list)
+    # delete and insert at index idx
     del new_list[idx]
     new_list.insert(idx, element)
 
