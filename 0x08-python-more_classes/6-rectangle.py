@@ -6,16 +6,22 @@
 
 class Rectangle:
     """ class Rectangle
+
         Attributes:
-                  width: the width of the rectangle
-                  height: height of rectangle
+                  __width: the width of the rectangle
+                  __height: height of rectangle
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ initialize class
             Args:
                 width: width of a rectangle
                 height: height of a rectangle
+            Attributes:
+                 number_of_instances: number of class instances
         """
+        type(self).number_of_instances += 1
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width < 0:
@@ -98,7 +104,6 @@ class Rectangle:
             arr.append(tmp)
             if x != self.__height - 1:
                 arr.append("\n")
-
         return "".join(arr)
 
     def __repr__(self):
@@ -111,5 +116,8 @@ class Rectangle:
     def __del__(self):
         """ distructor function called,
             when instance is about to be destroyed
+            Attributes:
+                      number_of_instances: number of class instances
         """
         print("Bye rectangle...")
+        type(self).number_of_instances -= 1
